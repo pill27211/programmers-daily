@@ -3,7 +3,12 @@
 3년 만에 감 찾기, 취미 등 겸사겸사해서 시작해 보는 PS 재활.<br>
 한창 백준할 때는 **678일** 스트릭을 유지했는데 이번에는 과연.. (**2026-08-08** 시작)
 
-[![solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=pill27211)](https://solved.ac/profile/pill27211)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg">
+</picture>
+
+> 이 잔디는 **이 저장소 커밋만** 카운트합니다 (매 커밋 + 매일 00:00 KST 자동 갱신).
 
 ---
 

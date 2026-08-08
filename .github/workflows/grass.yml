@@ -1,0 +1,45 @@
+name: 잔디 갱신
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'assets/**'          # 봇이 만든 SVG 커밋으로 재실행되지 않게
+      - 'README.md'
+  schedule:
+    - cron: '0 15 * * *'      # 매일 00:00 KST (안 푼 날 연속 끊김 반영)
+  workflow_dispatch:           # 수동 실행 버튼
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grass
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # 전체 커밋 히스토리 필요
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 잔디 SVG 생성
+        run: node .github/scripts/streak-grass.mjs
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/heatmap-dark.svg assets/heatmap-light.svg
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore: 잔디 갱신 [skip ci]"
+            git push
+          fi
