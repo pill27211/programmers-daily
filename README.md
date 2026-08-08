@@ -1,2 +1,16 @@
 # programmers-daily
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+
+3년 만에 감 찾기, 취미 등 겸사겸사해서 시작해 보는 PS 재활.
+한창 백준할 때는 **678일** 스트릭을 유지했는데 이번에는 과연..
+
+[![solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=pill27211)](https://solved.ac/profile/pill27211)
+
+---
+
+## 기록
+
+### 2026-08-08
+
+한창 살다시피 했던 백준이 서비스 종료를 하게 되어 프로그래머스로 재활을 시작했다. 오랜만에 C++을 쓰려다 보니 여러모로 어색했다. PS를 놓으면서 C++도 같이 잊고 산 탓인 듯. 그리고 백준과 달리, 파라미터와 반환 형식이 정해져 있는 함수 완성형 제출을 요구하는 프로그래머스 환경도 아직 낯선 것 같다.
+
+---
