@@ -32,14 +32,17 @@ jobs:
       - name: 잔디 SVG 생성
         run: node .github/scripts/streak-grass.mjs
 
-      - name: 변경분 커밋
+      - name: 변경분 커밋 (+이미지 캐시 무효화)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/heatmap-dark.svg assets/heatmap-light.svg
-          if git diff --cached --quiet; then
+          if git diff --quiet -- assets/heatmap-dark.svg assets/heatmap-light.svg; then
             echo "변경 없음"
           else
+            V=$(date +%s)
+            # README 이미지 주소의 ?v= 를 새 값으로 → GitHub 이미지 캐시 강제 갱신
+            sed -i -E "s#(assets/heatmap-(dark|light)\.svg)(\?v=[0-9]+)?#\1?v=$V#g" README.md
+            git add assets/heatmap-dark.svg assets/heatmap-light.svg README.md
             git commit -m "chore: 잔디 갱신 [skip ci]"
             git push
           fi
