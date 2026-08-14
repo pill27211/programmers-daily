@@ -38,6 +38,9 @@ jobs:
         run: node .github/scripts/streak-grass.mjs
 
       - name: 오늘의 문제 뽑기
+        # push(=풀이 커밋)에는 재추천하지 않음 → 자정(schedule)·수동 리롤에서만 갱신
+        # (풀이 시 solved 집합이 바뀌어 추천이 흔들리는 것 방지)
+        if: github.event_name != 'push'
         env:
           REROLL: ${{ inputs.reroll }}
           PICK_LANG: cpp        # C++로 제출 가능한 문제만 추천
