@@ -111,7 +111,7 @@ function renderBlock(date, picks) {
   return (
     `**오늘의 문제 · ${date}**\n\n` +
     lines.join('\n') +
-    `\n\n<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 잔디 갱신 → Run workflow(reroll 체크)</sub>`
+    `\n\n<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 해당 워크플로 → Run workflow(reroll 체크)</sub>`
   );
 }
 
