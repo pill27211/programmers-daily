@@ -8,16 +8,16 @@
 <!-- TODAY:START -->
 **오늘의 문제 · 2026-08-14** — 아래 중 하나 골라 풀면 됩니다 🎯
 
-1. [최고의 집합](https://school.programmers.co.kr/learn/courses/30/lessons/12938) — `Lv.3` · 정답률 58% · 연습문제
+1. [야근 지수](https://school.programmers.co.kr/learn/courses/30/lessons/12927) — `Lv.3` · 정답률 63% · 연습문제
 2. [[1차] 캐시](https://school.programmers.co.kr/learn/courses/30/lessons/17680) — `Lv.2` · 정답률 66% · 2018 KAKAO BLIND RECRUITMENT
-3. [격자 뒤집기 미로](https://school.programmers.co.kr/learn/courses/30/lessons/389630) — `Lv.4` · 정답률 4% · 2025 프로그래머스 코드챌린지 본선
+3. [가장 큰 삼각형 덩어리](https://school.programmers.co.kr/learn/courses/30/lessons/389629) — `Lv.4` · 정답률 6% · 2025 프로그래머스 코드챌린지 본선
 
 <sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → **잔디 갱신** → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786636125">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786636125">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786671474">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786671474">
 </picture>
 
 > 이 잔디는 **이 저장소 커밋만** 카운트합니다 (매 커밋 + 매일 00:00 KST 자동 갱신).
