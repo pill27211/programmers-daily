@@ -7,8 +7,9 @@
 
 - 프로그래머스 공개 API(`/api/v2/school/challenges`)에서 문제 목록을 가져옵니다.
 - 지정한 레벨(기본 2·3·4)에서 **각 1문제씩** 뽑아 **순서를 랜덤하게 섞습니다** (표시에는 난이도를 노출하지 않음).
+- 특정 레벨에 안 푼 문제가 없으면 그 레벨은 건너뛰고, 전부 소진되면 실행이 실패합니다.
 - **이미 푼 문제는 제외** — [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub)가 만든
-  `프로그래머스/{레벨}/{id}. {제목}` 폴더를 읽어 후보에서 뺍니다.
+  `프로그래머스/{레벨}/` 안의 `{id}.` 로 시작하는 폴더명에서 id를 뽑아 후보에서 뺍니다.
 - **날짜 시드** 고정이라 같은 날은 몇 번 실행돼도 결과가 같습니다 (커밋 때마다 흔들리지 않음).
 - **리롤** 지원 — 마음에 안 들면 수동으로 다시 뽑을 수 있고, 그 결과가 그날 내내 유지됩니다.
 
@@ -26,6 +27,17 @@
      env:
        REROLL: ${{ inputs.reroll }}   # 리롤 버튼을 쓸 때만 필요
      run: node .github/scripts/pick-problem.mjs
+   - name: 변경분 커밋
+     run: |
+       git config user.name "github-actions[bot]"
+       git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+       git add README.md .github/.today-salt
+       if git diff --cached --quiet; then
+         echo "변경 없음"
+       else
+         git commit -m "chore: 오늘의 문제 갱신 [skip ci]"
+         git push
+       fi
    ```
 
 2. **README에 마커 삽입** — 문제를 띄우고 싶은 위치에 아래 두 줄을 넣습니다.

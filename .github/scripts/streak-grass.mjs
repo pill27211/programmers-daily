@@ -1,15 +1,19 @@
-// 이 repo(programmers-daily)의 커밋 날짜만 집계해 잔디 히트맵 SVG를 생성한다.
-// 다른 repo 커밋은 git 히스토리에 애초에 없으므로 자동으로 이 repo만 카운트된다.
+// 이 repo의 '문제 풀이' 커밋만 집계해 잔디 히트맵 SVG를 생성한다.
+// - SOLVED_DIR({프로그래머스}) 하위에 파일이 '추가(A)'된 커밋만 카운트한다.
+//   (README·SVG 갱신, 봇 자동 커밋, 문서 수정 등은 잔디에 반영되지 않는다 →
+//    문제를 실제로 풀지 않으면 스트릭이 유지되지 않도록.)
 // 실행: node .github/scripts/streak-grass.mjs
 import { execSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
 const TZ = 'Asia/Seoul';
+const SOLVED_DIR = process.env.SOLVED_DIR || '프로그래머스'; // BaekjoonHub 풀이 폴더
 
-// ---- 커밋 날짜 → 날짜별 커밋수 집계 (KST 기준) ----
+// ---- 풀이 커밋 날짜 → 날짜별 커밋수 집계 (KST 기준) ----
 function collectCounts() {
+  // --diff-filter=A + 경로 지정: SOLVED_DIR 안에 파일을 새로 추가한 커밋만.
   const out = execSync(
-    'git log --no-merges --pretty=%ad --date=format-local:%Y-%m-%d',
+    `git log --no-merges --diff-filter=A --pretty=%ad --date=format-local:%Y-%m-%d -- "${SOLVED_DIR}"`,
     { encoding: 'utf8', env: { ...process.env, TZ } }
   ).trim();
   const counts = {};
