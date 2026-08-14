@@ -8,9 +8,9 @@
 <!-- TODAY:START -->
 **오늘의 문제 · 2026-08-14**
 
-1. [올바른 괄호의 갯수](https://school.programmers.co.kr/learn/courses/30/lessons/12929)
-2. [하노이의 탑](https://school.programmers.co.kr/learn/courses/30/lessons/12946)
-3. [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
+1. [사칙연산](https://school.programmers.co.kr/learn/courses/30/lessons/1843)
+2. [줄 서는 방법](https://school.programmers.co.kr/learn/courses/30/lessons/12936)
+3. [110 옮기기](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
 
 <sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 잔디 갱신 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
