@@ -10,6 +10,7 @@
 //
 // 설정(환경변수, 전부 선택):
 //   PICK_LEVELS   기본 "2,3,4"    (각 레벨에서 1문제씩)
+//   PICK_LANG     기본 "" (전체)  해당 언어로 제출 가능한 문제만 (예: python3, cpp)
 //   SOLVED_DIR    기본 "프로그래머스" (BaekjoonHub 풀이 폴더)
 //   README_PATH   기본 "README.md"
 //   REROLL        "1"/"true" 면 다시 뽑기
@@ -25,6 +26,14 @@ const SOLVED_DIR = process.env.SOLVED_DIR || '프로그래머스';
 const SALT_FILE = '.github/.today-salt';
 const LEVELS = (process.env.PICK_LEVELS || '2,3,4')
   .split(',').map((s) => Number(s.trim())).filter((n) => Number.isFinite(n));
+// 제출 언어 필터: 비우면 전체, 지정하면 그 언어로 풀 수 있는 문제만 (프로그래머스 API 지원)
+const VALID_LANGS = ['c', 'cpp', 'csharp', 'go', 'java', 'javascript',
+  'kotlin', 'python3', 'ruby', 'scala', 'swift', 'mysql', 'oracle'];
+const LANG = (process.env.PICK_LANG || '').trim().toLowerCase();
+if (LANG && !VALID_LANGS.includes(LANG)) {
+  console.error(`PICK_LANG="${LANG}" 은 지원하지 않는 값입니다. 가능: ${VALID_LANGS.join(', ')}`);
+  process.exit(1);
+}
 
 // ---- 날짜 시드 PRNG (mulberry32) ----
 function today() {
@@ -80,7 +89,8 @@ async function fetchLevel(level) {
   const all = [];
   let page = 1, totalPages = 1;
   do {
-    const url = `${API}?perPage=100&levels%5B%5D=${level}&order=recent&search=&page=${page}`;
+    const langQ = LANG ? `&languages%5B%5D=${LANG}` : '';
+    const url = `${API}?perPage=100&levels%5B%5D=${level}&order=recent&search=${langQ}&page=${page}`;
     const res = await fetch(url, {
       headers: { 'User-Agent': 'programmers-daily-bot', 'Accept': 'application/json' },
     });
