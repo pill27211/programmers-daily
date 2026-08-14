@@ -16,8 +16,8 @@
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786671474">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786671474">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786672399">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786672399">
 </picture>
 
 > 이 잔디는 **이 저장소 커밋만** 카운트합니다 (매 커밋 + 매일 00:00 KST 자동 갱신).
