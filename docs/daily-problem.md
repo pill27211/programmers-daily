@@ -3,6 +3,11 @@
 프로그래머스 문제를 **매일 자정(KST)에 자동으로 몇 개 뽑아 README에 띄워주는** 기능입니다.
 공개 API만 쓰고 별도 토큰·비밀값이 필요 없어서, 아래 4단계면 어느 레포에서도 그대로 동작합니다.
 
+> ℹ️ **이 가이드는 '오늘의 문제' 추천 기능만 다룹니다.** 원본 레포의 **잔디 히트맵**은
+> `streak-grass.mjs` 기반의 **별개 기능**이고, 원본 [`grass.yml`](../.github/workflows/grass.yml)은 이 둘을 한 워크플로에서 함께 돌립니다.
+> 오늘의 문제만 쓸 거면 아래 워크플로를 그대로 쓰세요 — **`grass.yml`을 통째로 복사하면 안 됩니다**
+> (잔디 스텝이 `streak-grass.mjs` 없이 실패). 잔디까지 원하면 `streak-grass.mjs`도 복사하고 해당 스텝을 따로 추가하면 됩니다.
+
 ## 동작 개요
 
 - 프로그래머스 공개 API(`/api/v2/school/challenges`)에서 문제 목록을 가져옵니다.
@@ -17,43 +22,60 @@
 
 ## 설치 (4단계)
 
-1. **파일 2개 복사**
-   - [`.github/scripts/pick-problem.mjs`](../.github/scripts/pick-problem.mjs)
-   - 워크플로: 이미 GitHub Actions로 뭔가 돌리고 있으면 그 워크플로에
-     아래 스텝만 추가하고, 없으면 [`.github/workflows/grass.yml`](../.github/workflows/grass.yml)을 참고해 새로 만드세요.
+1. **`pick-problem.mjs` 복사** — [`.github/scripts/pick-problem.mjs`](../.github/scripts/pick-problem.mjs)를 같은 경로에 그대로 넣습니다.
+
+2. **워크플로 추가** — 아래 내용을 `.github/workflows/today.yml`로 저장하면 끝입니다.
+   (이미 돌리는 워크플로가 있다면 `오늘의 문제 뽑기`·`변경분 커밋` **두 스텝만** 그쪽으로 옮겨도 됩니다.)
 
    ```yaml
-   - uses: actions/setup-node@v4
-     with: { node-version: '20' }
-   - name: 오늘의 문제 뽑기
-     env:
-       REROLL: ${{ inputs.reroll }}   # 리롤 버튼을 쓸 때만 필요
-     run: node .github/scripts/pick-problem.mjs
-   - name: 변경분 커밋
-     run: |
-       git config user.name "github-actions[bot]"
-       git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-       git add README.md .github/.today-salt
-       if git diff --cached --quiet; then
-         echo "변경 없음"
-       else
-         git commit -m "chore: 오늘의 문제 갱신 [skip ci]"
-         git push
-       fi
+   name: 오늘의 문제
+
+   on:
+     schedule:
+       - cron: '0 15 * * *'      # 매일 00:00 KST
+     workflow_dispatch:           # 수동 실행 + 리롤 버튼
+       inputs:
+         reroll:
+           description: '오늘의 문제 다시 뽑기'
+           type: boolean
+           default: false
+
+   permissions:
+     contents: write             # README 커밋 push용
+
+   jobs:
+     update:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - uses: actions/setup-node@v4
+           with: { node-version: '20' }
+
+         - name: 오늘의 문제 뽑기
+           env:
+             REROLL: ${{ inputs.reroll }}
+             # PICK_LANG: python3     # (선택) 특정 언어로 풀 수 있는 문제만 — 아래 '설정' 참고
+           run: node .github/scripts/pick-problem.mjs
+
+         - name: 변경분 커밋
+           run: |
+             git config user.name "github-actions[bot]"
+             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+             git add README.md .github/.today-salt
+             if git diff --cached --quiet; then
+               echo "변경 없음"
+             else
+               git commit -m "chore: 오늘의 문제 갱신 [skip ci]"
+               git push
+             fi
    ```
 
-2. **README에 마커 삽입** — 문제를 띄우고 싶은 위치에 아래 두 줄을 넣습니다.
+3. **README에 마커 삽입** — 문제를 띄우고 싶은 위치에 아래 두 줄을 넣습니다.
 
    ```markdown
    <!-- TODAY:START -->
    <!-- TODAY:END -->
    ```
-
-3. **워크플로 권한/트리거 확인**
-   - `permissions: { contents: write }` (커밋 push용)
-   - `schedule: - cron: '0 15 * * *'` → 매일 00:00 KST 자동 갱신
-   - 리롤 버튼을 쓰려면 `workflow_dispatch.inputs.reroll` (type: boolean) 추가
-   - 커밋 스텝에서 `README.md`와 `.github/.today-salt`를 함께 add/commit/push
 
 4. **끝.** 다음 자정에 첫 문제가 채워지고, Actions에서 수동 실행하면 즉시 채워집니다.
 
