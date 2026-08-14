@@ -6,13 +6,13 @@
 ## 🎲 오늘의 문제
 
 <!-- TODAY:START -->
-**오늘의 문제 · 2026-08-14** — 아래 중 하나 골라 풀면 됩니다 🎯
+**오늘의 문제 · 2026-08-14**
 
-1. [야근 지수](https://school.programmers.co.kr/learn/courses/30/lessons/12927) — `Lv.3` · 정답률 63% · 연습문제
-2. [[1차] 캐시](https://school.programmers.co.kr/learn/courses/30/lessons/17680) — `Lv.2` · 정답률 66% · 2018 KAKAO BLIND RECRUITMENT
-3. [가장 큰 삼각형 덩어리](https://school.programmers.co.kr/learn/courses/30/lessons/389629) — `Lv.4` · 정답률 6% · 2025 프로그래머스 코드챌린지 본선
+1. [올바른 괄호의 갯수](https://school.programmers.co.kr/learn/courses/30/lessons/12929)
+2. [하노이의 탑](https://school.programmers.co.kr/learn/courses/30/lessons/12946)
+3. [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
 
-<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → **잔디 갱신** → Run workflow(reroll 체크)</sub>
+<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 잔디 갱신 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
