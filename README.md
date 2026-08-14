@@ -12,7 +12,7 @@
 2. [줄 서는 방법](https://school.programmers.co.kr/learn/courses/30/lessons/12936)
 3. [110 옮기기](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
 
-<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 잔디 갱신 → Run workflow(reroll 체크)</sub>
+<sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 해당 워크플로 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
