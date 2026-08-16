@@ -6,18 +6,18 @@
 ## 🎲 오늘의 추천 문제
 
 <!-- TODAY:START -->
-**오늘의 문제 · 2026-08-16**
+**오늘의 문제 · 2026-08-17**
 
-1. [동굴 탐험](https://school.programmers.co.kr/learn/courses/30/lessons/67260)
-2. [리코쳇 로봇](https://school.programmers.co.kr/learn/courses/30/lessons/169199)
-3. [아방가르드 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/181186)
+1. [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
+2. [할인 행사](https://school.programmers.co.kr/learn/courses/30/lessons/131127)
+3. [무지의 먹방 라이브](https://school.programmers.co.kr/learn/courses/30/lessons/42891)
 
 <sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 해당 워크플로 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786887500">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786887500">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1786893087">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1786893087">
 </picture>
 
 > 이 잔디는 이 저장소의 **문제 풀이 커밋만** 카운트합니다 (`프로그래머스/`에 풀이 추가 시 · 매일 00:00 KST 자동 갱신).
