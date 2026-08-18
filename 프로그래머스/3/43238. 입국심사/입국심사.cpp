@@ -4,7 +4,7 @@ using namespace std;
 using ll = long long;
 
 ll solution(int n, vector<int> times) {
-    ll l(0), r(1e15);
+    ll l(0), r(1e18);
     while(l <= r)
     {
         ll m(l + r >> 1), n_(n);
