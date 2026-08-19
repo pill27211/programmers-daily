@@ -2,34 +2,25 @@
 using namespace std;
 
 int solution(int distance, vector<int> rocks, int n) {
-    rocks.push_back(0);
-    rocks.push_back(distance);
+    rocks.insert(rocks.end(), {0, distance, (int)2e9}); // 일반성 유지
     sort(rocks.begin(), rocks.end());
     
     int l(1), r(1e9), len(rocks.size());
-    rocks.push_back(2e9); // 일반성 유지
     while(l <= r)
     {
-        int m(l + r >> 1), cnt{}, flag{};
-        for(int i{}; i < len - 1;)
+        int m(l + r >> 1), cnt{};
+        for(int i{}; i < len - 1; i++)
         {
             int cur(rocks[i + 1] - rocks[i]);
-            if(cur >= m) i++;
-            else
+            while(cur < m && i < len - 1)
             {
-                while(cur < m && i < len - 1)
-                {
-                    i++;
-                    cur += rocks[i + 1] - rocks[i];
-                    cnt++;
-                }
-                
-                flag += cur < m;
                 i++;
+                cur += rocks[i + 1] - rocks[i];
+                cnt++;
             }
         }
         
-        if(cnt > n || flag) r = m - 1;
+        if(cnt > n) r = m - 1;
         else l = m + 1;
     }
     
