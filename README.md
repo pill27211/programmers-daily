@@ -6,18 +6,18 @@
 ## 🎲 오늘의 추천 문제
 
 <!-- TODAY:START -->
-**오늘의 문제 · 2026-08-19**
+**오늘의 문제 · 2026-08-20**
 
-1. [튜브의 소개팅](https://school.programmers.co.kr/learn/courses/30/lessons/1839)
-2. [GPS](https://school.programmers.co.kr/learn/courses/30/lessons/1837)
-3. [호텔 대실](https://school.programmers.co.kr/learn/courses/30/lessons/155651)
+1. [행렬 테두리 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/77485)
+2. [외벽 점검](https://school.programmers.co.kr/learn/courses/30/lessons/60062)
+3. [미로 탈출](https://school.programmers.co.kr/learn/courses/30/lessons/81304)
 
 <sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 해당 워크플로 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787147579">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787147579">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787152823">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787152823">
 </picture>
 
 > 이 잔디는 이 저장소의 **문제 풀이 커밋만** 카운트합니다 (`프로그래머스/`에 풀이 추가 시 · 매일 00:00 KST 자동 갱신).
