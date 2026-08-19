@@ -16,8 +16,8 @@
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787066433">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787066433">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787147579">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787147579">
 </picture>
 
 > 이 잔디는 이 저장소의 **문제 풀이 커밋만** 카운트합니다 (`프로그래머스/`에 풀이 추가 시 · 매일 00:00 KST 자동 갱신).
