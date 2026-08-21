@@ -6,18 +6,18 @@
 ## 🎲 오늘의 추천 문제
 
 <!-- TODAY:START -->
-**오늘의 문제 · 2026-08-21**
+**오늘의 문제 · 2026-08-22**
 
-1. [최고 속도](https://school.programmers.co.kr/learn/courses/30/lessons/468376)
-2. [가사 검색](https://school.programmers.co.kr/learn/courses/30/lessons/60060)
-3. [줄 서는 방법](https://school.programmers.co.kr/learn/courses/30/lessons/12936)
+1. [[1차] 뉴스 클러스터링](https://school.programmers.co.kr/learn/courses/30/lessons/17677)
+2. [무지의 먹방 라이브](https://school.programmers.co.kr/learn/courses/30/lessons/42891)
+3. [숫자 야구](https://school.programmers.co.kr/learn/courses/30/lessons/451808)
 
 <sub>매일 자정(KST) 자동 갱신 · 다시 뽑기: Actions → 해당 워크플로 → Run workflow(reroll 체크)</sub>
 <!-- TODAY:END -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787319052">
-  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787319052">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg?v=1787325761">
+  <img alt="이 저장소 풀이 잔디" src="assets/heatmap-light.svg?v=1787325761">
 </picture>
 
 > 이 잔디는 이 저장소의 **문제 풀이 커밋만** 카운트합니다 (`프로그래머스/`에 풀이 추가 시 · 매일 00:00 KST 자동 갱신).
